@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: production2
+  database: development2
   username: development2
   password: <%= ENV['CHALLENGERUBY_DATABASE_PASSWORD'] %>
