@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# Gemas creadas por mi
+gem 'devise'
 gem 'rails_12factor', group: :production
 
 # Reduces boot times through caching; required in config/boot.rb
