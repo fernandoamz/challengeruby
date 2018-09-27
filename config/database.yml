@@ -48,9 +48,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  #<<: *default
+  <<: *default
   database: development2
   username: development2
-  #password: <%= ENV['CHALLENGERUBY_DATABASE_PASSWORD'] %>
-  password: Tu2LV?56e-53
-  host: den1.mysql5.gear.host
+  password: <%= ENV['CHALLENGERUBY_DATABASE_PASSWORD'] %>
