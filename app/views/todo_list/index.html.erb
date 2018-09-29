@@ -1,6 +1,7 @@
 <h1>¡Bienvenido!</h1>
 <%= link_to 'Crear nuevo', :action => :new %>
-<p><%= link_to("Generate Report", todo_list_index_path(format: "csv")) %></p>
+<p><%= link_to("Generate Report CSV", todo_list_index_path(format: "csv")) %></p>
+<p><%= link_to("Generate Report PDF", todo_list_index_path(format: "pdf")) %></p>
 
 <table>
     <tr>

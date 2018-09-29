@@ -2,9 +2,20 @@ class TodoListController < ApplicationController
     def index
         @todo_list = TodoList.where(id_usuario: current_user.id)
 
-        respond_to do |format|
-            format.html
-            format.csv { send_data @todo_list.to_csv, filename: "users-#{Date.today}.csv" }
+        case params[:format] 
+        when "pdf"
+            respond_to do |format|
+                format.html
+                format.pdf do
+                pdf = TodoListPdf.new(@todo_list)
+                send_data pdf.render, filename: 'todo_lists.pdf', type: 'application/pdf', disposition: 'inline'
+                end  
+            end
+        when 
+            respond_to do |format|
+                format.html
+                format.csv { send_data @todo_list.to_csv, filename: "todo_list_#{Date.today}.csv" }
+            end
         end
     end
 
@@ -42,11 +53,6 @@ class TodoListController < ApplicationController
         @todo_list = TodoList.find(params[:id])
         @todo_list.destroy
         redirect_to root_path
-    end
-
-    def import_to_csv
-        TodoList.import(params[:file])
-        redirect_to root_url, notice: "Products imported."
     end
 
     private
