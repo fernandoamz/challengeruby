@@ -1,0 +1,28 @@
+<h1>¡Bienvenido!</h1>
+<%= link_to 'Crear nuevo', :action => :new %>
+<p><%= link_to("Generate Report", todo_list_index_path(format: "csv")) %></p>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Done homework</th>
+        <th>Edit</th>
+        <th>Show</th>
+        <th>Delete</th>
+    </tr>
+
+    <% @todo_list.each do |todo| %>
+        <tr>
+            <td><%= todo.title %></td>
+            <td><%= todo.description %></td>
+            <td><%= todo.done_homework %></td>
+            <td><%= link_to 'Edit', edit_todo_list_path(todo) %></td>
+            <td><%= link_to 'Show', todo_list_path(todo) %></td>
+            <td><%= link_to 'Destroy', todo_list_path(todo), 
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+            </td>
+        </tr>
+    <% end %> 
+</table>
