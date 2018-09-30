@@ -1,7 +1,9 @@
 
 <h1>New To do</h1>
  
-<%= render 'layouts/form' %>
+<%= form_for :todo_list, :url => {:action => :create}  do |f| %>
+    <%= render(:partial => "form", :locals => {:f => f})%>
+<% end %>
 
 <%= link_to 'Back', :action => :index %>
 

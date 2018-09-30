@@ -1,6 +1,8 @@
 
 <h1>Edit</h1>
- 
-<%= render 'layouts/form' %>
+
+<%= form_with model: @todo_list, local: true do |f| %>
+    <%= render(:partial => "form", :locals => {:f => f})%>
+<% end %>
  
 <%= link_to 'Back', :action => :index %>

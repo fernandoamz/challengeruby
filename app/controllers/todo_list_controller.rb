@@ -38,10 +38,10 @@ class TodoListController < ApplicationController
     end
 
     def update        
-        if TodoList.update(post_params.merge(:id_usuario => current_user.id, :done_homework => 0))
-          redirect_to root_path
+        if TodoList.find(params[:id]).update(post_params.merge(:id_usuario => current_user.id, :done_homework => 0))
+            redirect_to :action => :index
         else
-          render 'edit'
+            render 'edit'
         end
     end
 
