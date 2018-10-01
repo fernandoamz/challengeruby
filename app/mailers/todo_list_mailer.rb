@@ -1,0 +1,2 @@
+class TodoListMailer < ApplicationMailer
+end
