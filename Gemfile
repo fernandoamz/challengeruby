@@ -39,6 +39,7 @@ gem 'rails_12factor', group: :production
 gem 'omniauth-facebook'
 gem 'prawn' 
 gem 'prawn-table'
+gem 'paperclip'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
