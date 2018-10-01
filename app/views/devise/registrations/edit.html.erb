@@ -4,8 +4,14 @@
   <%= devise_error_messages! %>
 
   
-  <%= resource.avatar.file? ? image_tag(resource.avatar.url(:thumb)) : image_tag(resource.image) %>
-
+  <% if resource.avatar.file? %>
+    <%= image_tag(resource.avatar.url(:thumb)) %>
+  <% elsif resource.image %>
+    <%=  image_tag(resource.image) %> 
+  <% else %>
+    <%= "Sin imagen" %> 
+  <% end %>
+  
   <div class="field">
     Add Your <%= f.label :avatar %>: <%= f.file_field :avatar %>
   </div>
