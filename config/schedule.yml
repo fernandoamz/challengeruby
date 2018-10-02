@@ -1,0 +1,4 @@
+send_pending_task:
+  cron: "* * * * *"
+  class: "SendPendingTaskJob"
+  queue: default
