@@ -5,8 +5,10 @@ class TodoMailer < ApplicationMailer
   #
   #   en.todo_mailer.task_pending.subject
   #
-  def task_pending(id: id, email: email)
-    @todo_list_pending_homework = TodoList.where(id_usuario: id, done_homework: false)
-    mail to: email, subject: "testing active mailer"
+  def task_pending
+    @user = User.find(1)
+    @greeting = "Hi"
+
+    mail to: @user.email, subject: "testing active mailer"
   end
 end
