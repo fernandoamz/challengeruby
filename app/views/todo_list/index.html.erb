@@ -7,17 +7,37 @@
     <tr>
         <th>Title</th>
         <th>Description</th>
-        <th>Done homework</th>
+        <th>Status</th>
         <th>Edit</th>
         <th>Show</th>
         <th>Delete</th>
     </tr>
 
-    <% @todo_list.each do |todo| %>
+    <tr>
+        <td colspan="4"><b>To do homeworks</b></td>
+    </tr>
+    <% @todo_list_done_homework.each do |todo| %>
         <tr>
             <td><%= todo.title %></td>
             <td><%= todo.description %></td>
-            <td><%= todo.done_homework %></td>
+            <td><%= todo.done_homework == true ? "Finished" : "Pending"  %></td>
+            <td><%= link_to 'Edit', edit_todo_list_path(todo) %></td>
+            <td><%= link_to 'Show', todo_list_path(todo) %></td>
+            <td><%= link_to 'Destroy', todo_list_path(todo), 
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+            </td>
+        </tr>
+    <% end %> 
+
+    <tr>
+        <td colspan="4"><b>Pending homeworks</b></td>
+    </tr>
+    <% @todo_list_pending_homework.each do |todo| %>
+        <tr>
+            <td><%= todo.title %></td>
+            <td><%= todo.description %></td>
+            <td><%= todo.done_homework == true ? "Finished" : "Pending"  %></td>
             <td><%= link_to 'Edit', edit_todo_list_path(todo) %></td>
             <td><%= link_to 'Show', todo_list_path(todo) %></td>
             <td><%= link_to 'Destroy', todo_list_path(todo), 
@@ -27,3 +47,4 @@
         </tr>
     <% end %> 
 </table>
+

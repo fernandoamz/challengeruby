@@ -1,7 +1,8 @@
 class TodoListController < ApplicationController
     def index
-        @todo_list = TodoList.where(id_usuario: current_user.id)
-
+        @todo_list_done_homework = TodoList.where(id_usuario: current_user.id, done_homework: true)
+        @todo_list_pending_homework = TodoList.where(id_usuario: current_user.id, done_homework: false)
+        
         case params[:format] 
         when "pdf"
             respond_to do |format|
@@ -38,7 +39,7 @@ class TodoListController < ApplicationController
     end
 
     def update        
-        if TodoList.find(params[:id]).update(post_params.merge(:id_usuario => current_user.id, :done_homework => 0))
+        if TodoList.find(params[:id]).update(post_params.merge(:id_usuario => current_user.id))
             redirect_to :action => :index
         else
             render 'edit'
@@ -57,6 +58,6 @@ class TodoListController < ApplicationController
 
     private
     def post_params
-        params.require(:todo_list).permit(:title, :description)
+        params.require(:todo_list).permit(:title, :description, :done_homework)
     end 
 end
