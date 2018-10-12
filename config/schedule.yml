@@ -1,4 +1,4 @@
 send_pending_task:
-  cron: "26 15 * * 4 * America/Mexico_City"
+  cron: "36 15 * * 4 America/Mexico_City"
   class: "SendPendingTaskJob"
   queue: default
