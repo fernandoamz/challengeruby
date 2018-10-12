@@ -14,13 +14,12 @@
     </tr>
 
     <tr>
-        <td colspan="4"><b>To do homeworks</b></td>
+        <td colspan="4"><b>Done homeworks</b></td>
     </tr>
-    <% @todo_list_done_homework.each do |todo| %>
+    <% @todo_list_done_homework&.each do |todo| %>
         <tr>
             <td><%= todo.title %></td>
             <td><%= todo.description %></td>
-            <td><%= todo.done_homework == true ? "Finished" : "Pending"  %></td>
             <td><%= link_to 'Edit', edit_todo_list_path(todo) %></td>
             <td><%= link_to 'Show', todo_list_path(todo) %></td>
             <td><%= link_to 'Destroy', todo_list_path(todo), 
@@ -33,11 +32,11 @@
     <tr>
         <td colspan="4"><b>Pending homeworks</b></td>
     </tr>
-    <% @todo_list_pending_homework.each do |todo| %>
+    
+    <% @todo_list_pending_homework&.each do |todo| %>
         <tr>
             <td><%= todo.title %></td>
             <td><%= todo.description %></td>
-            <td><%= todo.done_homework == true ? "Finished" : "Pending"  %></td>
             <td><%= link_to 'Edit', edit_todo_list_path(todo) %></td>
             <td><%= link_to 'Show', todo_list_path(todo) %></td>
             <td><%= link_to 'Destroy', todo_list_path(todo), 
@@ -46,5 +45,6 @@
             </td>
         </tr>
     <% end %> 
+
 </table>
 
