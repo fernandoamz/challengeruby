@@ -6,7 +6,7 @@ class TodoMailer < ApplicationMailer
   #   en.todo_mailer.task_pending.subject
   #
   def task_pending(id: id, email: email)
-    @todo_list_pending_homework = TodoList.where(id_usuario: id, done_homework: false)
+    @todo_list_pending_homework = id.todo_lists.pending
     mail to: email, subject: "testing active mailer"
   end
 end
