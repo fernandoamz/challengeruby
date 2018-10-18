@@ -26,8 +26,8 @@ class TodoListController < ApplicationController
     def create      
         @todo_list = TodoList.new(todo_lists_params.merge(user_id: current_user.id))
 
-        if @todo_lists.save
-            redirect_to :action => :index
+        if @todo_list.save
+            redirect_to action: 'index'
         else
           render 'new'
         end
@@ -35,7 +35,7 @@ class TodoListController < ApplicationController
 
     def update        
         if TodoList.find(params[:id]).update(todo_lists_params.merge(user_id: current_user.id))
-            redirect_to :action => :index
+            redirect_to action: 'index'
         else
             render 'edit'
         end
