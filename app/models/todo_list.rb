@@ -1,7 +1,7 @@
 require 'csv'
 
 class TodoList < ApplicationRecord
-  belongs_to :user
+  belongs_to :users
 
   def self.to_csv
     attributes = %w{title description done_homework}

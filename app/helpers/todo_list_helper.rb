@@ -1,5 +1,5 @@
 module TodoListHelper
-    def define_image
+    def defineImage
         if resource.avatar.file? 
             image_tag(resource.avatar.url(:thumb)) 
         elsif resource.image

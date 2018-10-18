@@ -3,11 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:facebook]
+         :omniauthable, :omniauth_providers => [:facebook]
         
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   has_many :todo_lists
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   def self.new_with_session(params, session)
     super.tap do |user|
