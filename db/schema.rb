@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_034954) do
   create_table "todo_lists", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.integer "id_usuario"
+    t.integer "user_id"
     t.boolean "done_homework"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
