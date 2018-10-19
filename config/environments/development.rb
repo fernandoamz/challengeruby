@@ -66,17 +66,10 @@ Rails.application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'example.com',
-    user_name:            'fernandoamz148@gmail.com',
-    password:             '',
+    user_name:            ENV['MAIL_USERNAME'],
+    password:             ENV['MAIL_PASSWORD'],
     authentication:       'plain',
     enable_starttls_auto: true 
   }
-
-  # Testing 
-  # Rails console
-  # mail = TodoMailer.task_pending
-  # mail.deliver_now
-
-  # [DEVISE]
   config.action_mailer.default_url_options= { host: 'localhost', port: 3000 }
 end

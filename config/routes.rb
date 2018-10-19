@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   
   resources :todo_list
   
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, controllers: { omniauth_callbacks:  'users/omniauth_callbacks' }
   
-  root "todo_list#index"
+  root 'todo_list#index'
 end

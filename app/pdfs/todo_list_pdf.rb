@@ -1,7 +1,7 @@
 class TodoListPdf < Prawn::Document
     def initialize(todo_list)
         super()
-        @todo_list = TodoList.order("id DESC").all
+        @todo_list = TodoList.order('id DESC').all
         map_table
     end
 
