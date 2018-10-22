@@ -47,6 +47,4 @@ test:
 #
 production:
   <<: *default
-  database: production
-  username: developer_f
-  password: <%= ENV['CHALLENGERUBY_DATABASE_PASSWORD'] %>
+  url: 'postgres://ucpxcihksjmkuz:5c40e1fdaa0e5f79a6e0386b4161274d987bc673404625e6782d415d7907c1ba@ec2-184-73-222-192.compute-1.amazonaws.com:5432/deimfkt98oe85u'
