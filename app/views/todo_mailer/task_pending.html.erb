@@ -1,0 +1,23 @@
+<h1>To do pending list</h1>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Edit</th>
+        <th>Show</th>
+        <th>Delete</th>
+    </tr>
+    <tr>
+        <td colspan='4'><b>Pending homeworks</b></td>
+    </tr>
+    <% @todo_list_pending_homework.each do |todo| %>
+        <tr>
+            <td><%= todo.title %></td>
+            <td><%= todo.description %></td>
+            <td><%= todo.done_homework %></td>
+        </tr>
+    <% end %> 
+</table>
+

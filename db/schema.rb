@@ -12,16 +12,19 @@
 
 ActiveRecord::Schema.define(version: 2018_10_01_034954) do
 
-  create_table "todo_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "todo_lists", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.integer "id_usuario"
+    t.integer "user_id"
     t.boolean "done_homework"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

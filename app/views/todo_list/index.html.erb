@@ -1,23 +1,25 @@
 <h1>¡Bienvenido!</h1>
 <%= link_to 'Crear nuevo', :action => :new %>
-<p><%= link_to("Generate Report CSV", todo_list_index_path(format: "csv")) %></p>
-<p><%= link_to("Generate Report PDF", todo_list_index_path(format: "pdf")) %></p>
+<p><%= link_to('Generate Report CSV', todo_list_index_path(format: 'csv')) %></p>
+<p><%= link_to('Generate Report PDF', todo_list_index_path(format: 'pdf')) %></p>
 
 <table>
     <tr>
         <th>Title</th>
         <th>Description</th>
-        <th>Done homework</th>
+        <th>Status</th>
         <th>Edit</th>
         <th>Show</th>
         <th>Delete</th>
     </tr>
 
-    <% @todo_list.each do |todo| %>
+    <tr>
+        <td colspan='4'><b>Done homeworks</b></td>
+    </tr>
+    <% @todo_list_done_homework&.each do |todo| %>
         <tr>
             <td><%= todo.title %></td>
             <td><%= todo.description %></td>
-            <td><%= todo.done_homework %></td>
             <td><%= link_to 'Edit', edit_todo_list_path(todo) %></td>
             <td><%= link_to 'Show', todo_list_path(todo) %></td>
             <td><%= link_to 'Destroy', todo_list_path(todo), 
@@ -26,4 +28,23 @@
             </td>
         </tr>
     <% end %> 
+
+    <tr>
+        <td colspan='4'><b>Pending homeworks</b></td>
+    </tr>
+    
+    <% @todo_list_pending_homework&.each do |todo| %>
+        <tr>
+            <td><%= todo.title %></td>
+            <td><%= todo.description %></td>
+            <td><%= link_to 'Edit', edit_todo_list_path(todo) %></td>
+            <td><%= link_to 'Show', todo_list_path(todo) %></td>
+            <td><%= link_to 'Destroy', todo_list_path(todo), 
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+            </td>
+        </tr>
+    <% end %> 
+
 </table>
+
