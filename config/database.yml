@@ -47,4 +47,5 @@ test:
 #
 production:
   <<: *default
-  url: 'postgres://ucpxcihksjmkuz:5c40e1fdaa0e5f79a6e0386b4161274d987bc673404625e6782d415d7907c1ba@ec2-184-73-222-192.compute-1.amazonaws.com:5432/deimfkt98oe85u'
+  url: 'postgres://ubqaxekpxqsekq:4b01dde343a683a48c0a36253226face9ee817ac90ade69a0a310b866d507982@ec2-54-235-249-33.compute-1.amazonaws.com:5432/d6f4id9acnkvas'
+
