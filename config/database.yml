@@ -47,7 +47,6 @@ test:
 #
 production:
   <<: *default
-  database: deimfkt98oe85u
-  username: ucpxcihksjmkuz
-  port: 5432
+  database: production
+  username: developer_f
   password: <%= ENV['CHALLENGERUBY_DATABASE_PASSWORD'] %>
