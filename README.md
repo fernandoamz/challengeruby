@@ -1,24 +1,25 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# TODO APP :memo: 
 
-Things you may want to cover:
+:link:**Live Example:**  https://ruby-challenge-magma.herokuapp.com/ 
 
-* Ruby version
+### This is a simple TodoApp
+You should develop a TODO App that includes the following features
 
-* System dependencies
+:white_check_mark: Users should login to the App (Devise/Omniauth) 
+***i used both***
 
-* Configuration
+:white_check_mark:  Users can create, read, update and delete (CRUD) lists of TODOs
 
-* Database creation
+:white_check_mark:   Users can CRUD taks on a list
 
-* Database initialization
+:white_check_mark: Users can export their lists with their tasks to CSV and PDF files.
 
-* How to run the test suite
+:white_check_mark:  Users should receive weekly email including pending tasks (using emails and BackgroundJobs with Sidekiq and Redis)
 
-* Services (job queues, cache servers, search engines, etc.)
+:white_check_mark: Users can update your profile: name, email, description and photo (photo must be uploaded)
 
-* Deployment instructions
+:construction_worker:   The app must include unit tests with Rspec
 
-* ...
+:construction_worker: BONUS (this is not required but a nice to have feature)  
+Integration with Capybara
