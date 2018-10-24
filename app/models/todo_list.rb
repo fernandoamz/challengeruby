@@ -2,6 +2,7 @@ require 'csv'
 
 class TodoList < ApplicationRecord
   belongs_to :user
+  validates :title, :description, presence: true
 
   def self.to_csv
     attributes = %w{title description done_homework}
@@ -22,7 +23,7 @@ class TodoList < ApplicationRecord
       todo_list.update_attributes(todo_list_hash)
     end
   end
-
+  
   scope :completed, -> { where(done_homework: true) }
   scope :pending, -> { where(done_homework: false) }
 
