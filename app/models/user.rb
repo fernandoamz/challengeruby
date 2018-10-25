@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
         
-  has_one_attached :avatar 
+  has_one_attached :avatar
   has_many :todo_lists
   validate :avatar_validation
 
