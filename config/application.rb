@@ -1,6 +1,7 @@
 require_relative 'boot'
+require 'active_storage'
 
-require "csv"
+require 'csv'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems

@@ -38,9 +38,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'rails_12factor', group: :production
 gem 'omniauth-facebook'
+gem 'image_processing', '~> 1.2'
 gem 'prawn' 
 gem 'prawn-table'
-gem 'paperclip'
 gem 'sidekiq'
 gem 'sidekiq-cron'
 
