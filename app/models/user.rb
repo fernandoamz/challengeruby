@@ -5,9 +5,21 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
         
-  has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' }
+  has_one_attached :avatar 
   has_many :todo_lists
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  validate :avatar_validation
+
+  def avatar_validation
+    if avatar.attached?
+      if avatar.blob.byte_size > 1000000
+        avatar.purge
+        errors[:base] << 'Too big'
+      elsif !avatar.blob.content_type.starts_with?('image/')
+        avatar.purge
+        errors[:base] << 'Wrong format'
+      end
+    end
+  end
 
   def self.new_with_session(params, session)
     super.tap do |user|
