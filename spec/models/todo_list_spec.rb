@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe TodoList, type: :model do
-  let (:params) {{ title: 'test', description: 'test description', done_homework: 1, user_id: 2 }}
+  let (:params){{title:'test',description:'description',done_homework:1,user_id:2}}
 
   context 'validations test' do
     it 'ensures title precense' do
@@ -25,7 +25,7 @@ RSpec.describe TodoList, type: :model do
     end
   end 
 
-  context 'ensures TodoList is saving' do 
+  context 'ensures TodoList is saving' do
     it 'ensures todo lists is saving' do
       todo_list_save = TodoList.new(params).save
       expect(todo_list_save).to eq(true)
