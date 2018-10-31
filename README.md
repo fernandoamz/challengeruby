@@ -20,4 +20,4 @@ You should develop a TODO App that includes the following features
 
 :white_check_mark:   The app must include unit tests with Rspec
 
-:construction_worker: BONUS (this is not required but a nice to have feature) Integration with Capybara
+:white_check_mark: BONUS (this is not required but a nice to have feature) Integration with Capybara
