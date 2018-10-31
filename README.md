@@ -7,7 +7,6 @@
 You should develop a TODO App that includes the following features
 
 :white_check_mark: Users should login to the App (Devise/Omniauth) 
-***i used both***
 
 :white_check_mark:  Users can create, read, update and delete (CRUD) lists of TODOs
 
@@ -19,7 +18,6 @@ You should develop a TODO App that includes the following features
 
 :white_check_mark: Users can update your profile: name, email, description and photo (photo must be uploaded)
 
-:construction_worker:   The app must include unit tests with Rspec
+:white_check_mark:   The app must include unit tests with Rspec
 
-:construction_worker: BONUS (this is not required but a nice to have feature)  
-Integration with Capybara
+:construction_worker: BONUS (this is not required but a nice to have feature) Integration with Capybara

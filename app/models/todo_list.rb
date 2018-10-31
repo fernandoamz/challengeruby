@@ -1,6 +1,7 @@
 require 'csv'
 
 class TodoList < ApplicationRecord
+  validates :title,:description, presence: true
   belongs_to :user
 
   def self.to_csv
